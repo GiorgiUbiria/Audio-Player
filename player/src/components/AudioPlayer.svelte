@@ -1,4 +1,5 @@
 <script lang="ts">
+	import MusicCard from './MusicCard.svelte';
 	let audio: HTMLAudioElement;
 	export let songs: { data: string[] };
 
@@ -6,6 +7,12 @@
 	let currentSongIndex = 0;
 
 	let playbackState = 'stopped';
+
+	function playSong(index: number) {
+		currentSongIndex = index;
+		audio.src = songs.data[currentSongIndex];
+		play();
+	}
 
 	function play() {
 		audio
@@ -178,11 +185,9 @@
 		>
 	</div>
 </div>
-<div class="p-4">
-	<h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Playlist</h2>
-	<ul>
-		{#each songs.data as song, index}
-			<li class:current={index === currentSongIndex}>{song}</li>
-		{/each}
-	</ul>
+<hr />
+<div class="p-4 align-baseline">
+	{#each songs.data as song, index}
+		<MusicCard {song} {index} {currentSongIndex} {playSong} />
+	{/each}
 </div>
