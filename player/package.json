@@ -41,8 +41,10 @@
   "type": "module",
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
+    "clsx": "^2.1.0",
     "svelte-adapter-bun": "^0.5.2",
-    "tailwind-merge": "^2.2.1"
+    "tailwind-merge": "^2.2.2",
+    "tailwind-variants": "^0.2.1"
   },
   "module": "index.ts"
 }

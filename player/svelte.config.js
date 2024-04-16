@@ -5,7 +5,10 @@ import adapter from "svelte-adapter-bun";
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+        alias: {
+            "@/*": "./src/lib/*"
+        }
 	}
 };
 
