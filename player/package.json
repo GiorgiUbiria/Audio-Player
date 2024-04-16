@@ -41,10 +41,14 @@
   "type": "module",
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
+    "bits-ui": "^0.21.3",
     "clsx": "^2.1.0",
+    "formsnap": "^1.0.0",
     "svelte-adapter-bun": "^0.5.2",
+    "sveltekit-superforms": "^2.12.4",
     "tailwind-merge": "^2.2.2",
-    "tailwind-variants": "^0.2.1"
+    "tailwind-variants": "^0.2.1",
+    "zod": "^3.22.4"
   },
   "module": "index.ts"
 }
