@@ -8,7 +8,7 @@ export default async function uploadFile(name: string) {
     const { data, error } = await supabase
         .storage
         .from('audio')
-        .upload('playlist/' + name, audioFile, {
+        .upload('playlist/' + name + '.mp3', audioFile, {
             cacheControl: '3600',
             upsert: false
         })
