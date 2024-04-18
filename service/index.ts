@@ -2,7 +2,7 @@ import callWelcome from "./service";
 import { unlink } from "node:fs/promises";
 import uploadFile from "./init";
 
-Bun.serve({
+const server = Bun.serve({
     port: 8080,
     async fetch(req) {
         const body = await JSON.parse(await Bun.readableStreamToText(req.body!));
@@ -19,6 +19,9 @@ Bun.serve({
         const videoPath = "./video.mp4";
         await unlink(videoPath);
 
+        server.stop();
+
         return new Response(JSON.stringify(supaData));
     },
 });
+
