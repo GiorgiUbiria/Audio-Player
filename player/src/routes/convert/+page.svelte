@@ -4,4 +4,6 @@
 	export let data: PageData;
 </script>
 
-<SettingsForm data={data.form} />
+<div class="mx-auto max-w-3xl p-4 w-full">
+	<SettingsForm data={data.form} />
+</div>

@@ -14,6 +14,6 @@
 	on:click={() => playSong(index)}
 	class:selected={index === currentSongIndex}
 >
-	<p>{name}</p>
+	<p class="text-sm text-gray-700 dark:text-black">{name}</p>
 </div>
 

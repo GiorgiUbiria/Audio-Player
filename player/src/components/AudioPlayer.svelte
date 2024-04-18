@@ -184,10 +184,10 @@
 			></button
 		>
 	</div>
-</div>
-<hr />
-<div class="p-4 align-baseline">
-	{#each songs.data as song, index}
-		<MusicCard {song} {index} {currentSongIndex} {playSong} />
-	{/each}
+	<hr />
+	<div class="p-4 align-baseline flex flex-col gap-2">
+		{#each songs.data as song, index}
+			<MusicCard {song} {index} {currentSongIndex} {playSong} />
+		{/each}
+	</div>
 </div>
