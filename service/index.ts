@@ -18,8 +18,6 @@ Bun.serve({
 
         const videoPath = "./video.mp4";
         await unlink(videoPath);
-        const audioPath = "./output.mp3"
-        await unlink(audioPath);
 
         return new Response(JSON.stringify(supaData));
     },
