@@ -3,4 +3,6 @@
 	export let data;
 </script>
 
-<AudioPlayer songs={data} />
+<div class="mx-auto max-w-3xl p-4 w-full">
+	<AudioPlayer songs={data} />
+</div>
