@@ -23,5 +23,13 @@
 		<Form.Description>URL of a Youtube video you want to convert.</Form.Description>
 		<Form.FieldErrors />
 	</Form.Field>
+	<Form.Field {form} name="audio_name">
+		<Form.Control let:attrs>
+			<Form.Label>Name:</Form.Label>
+			<Input {...attrs} bind:value={$formData.audio_name} />
+		</Form.Control>
+		<Form.Description>How to save the converted file.</Form.Description>
+		<Form.FieldErrors />
+	</Form.Field>
 	<Form.Button>Convert</Form.Button>
 </form>

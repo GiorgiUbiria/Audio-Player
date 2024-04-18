@@ -19,9 +19,11 @@ export const actions: Actions = {
             });
         }
         const url = form.data.video_url;
+        const name = form.data.audio_name;
+        const body = JSON.stringify({ url, name });
         await fetch("http://localhost:8080/", {
             method: "POST",
-            body: url
+            body: body
         })
         return {
             form,
