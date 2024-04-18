@@ -24,4 +24,3 @@ Bun.serve({
         return new Response(JSON.stringify(supaData));
     },
 });
-
