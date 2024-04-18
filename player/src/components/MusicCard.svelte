@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 
 	export let song: string;
-    // last part after /
     let name = song.split('/')[song.split('/').length - 1];
 	export let index: number;
 	export let currentSongIndex: number;

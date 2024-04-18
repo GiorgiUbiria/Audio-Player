@@ -25,8 +25,12 @@
 					</div>
 					<Input id="password" type="password" required />
 				</div>
-				<Button type="submit" class="w-full">Login</Button>
-				<Button variant="outline" class="w-full">Login with Google</Button>
+				<form method="POST" action="?/email">
+					<Button type="submit" class="w-full">Login</Button>
+				</form>
+				<form method="POST">
+					<Button variant="outline" class="w-full">Login with Github</Button>
+				</form>
 			</div>
 			<div class="mt-4 text-center text-sm">
 				Don&apos;t have an account?
