@@ -1,9 +1,10 @@
 <script lang="ts">
 	import ThemeToggle from './ThemeToggle.svelte';
 	export let data: any;
-	let { session } = data;
-	$: ({ session } = data);
-	$: ({ user } = session);
+	let session: any;
+
+	$: session = data?.session;
+	$: user = session?.user;
 </script>
 
 <div class="flex justify-between items-center bg-gray-100 dark:bg-gray-700 px-4 py-2">
