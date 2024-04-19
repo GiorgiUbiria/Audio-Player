@@ -25,3 +25,4 @@ const server = Bun.serve({
     },
 });
 
+console.log("Server is running on port 8080")
