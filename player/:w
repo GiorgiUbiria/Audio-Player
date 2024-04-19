@@ -1,7 +1,6 @@
 <script lang="ts">
-	export let data: any;
+	export let data: PageLoad;
 	import { toast } from 'svelte-sonner';
-	import type { PageServerLoad } from './$types';
 </script>
 
 {#if data.success === true}

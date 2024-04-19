@@ -5,7 +5,8 @@ export const load: PageServerLoad = async ({ locals: { supabase } }: any) => {
     const { error } = await supabase.auth.signOut()
     if (error) {
         console.log(error)
+        return { success: false, error: error.message, message: error.message }
     }
 
-    redirect(303, "/")
+    return { success: true, error: null, message: "Signed out" }
 }
