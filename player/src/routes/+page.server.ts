@@ -1,26 +1,23 @@
-import { supabase } from "$lib/supabase";
+import { supabase } from '$lib/supabase';
 
 export async function load() {
-    let arr: string[] = [];
-    const { data: list, error } = await supabase
-        .storage
-        .from('audio')
-        .list('playlist', {
-            limit: 100,
-            offset: 0,
-        })
+	const arr: string[] = [];
+	const { data: list, error } = await supabase.storage.from('audio').list('playlist', {
+		limit: 100,
+		offset: 0
+	});
 
-    list?.forEach(async (item) => {
-        const { data } = await supabase
-            .storage
-            .from('audio')
-            .getPublicUrl(`playlist/${item.name}`)
+	if (error) {
+		console.log(error.message);
+	}
 
-        arr.push(data.publicUrl)
-    })
+	list?.forEach(async (item) => {
+		const { data } = await supabase.storage.from('audio').getPublicUrl(`playlist/${item.name}`);
 
-    return {
-        data: arr,
-    };
+		arr.push(data.publicUrl);
+	});
+
+	return {
+		data: arr
+	};
 }
-
