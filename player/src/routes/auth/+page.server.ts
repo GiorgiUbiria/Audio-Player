@@ -4,7 +4,6 @@ import { AuthApiError, type Provider } from '@supabase/supabase-js'
 export const load = async ({ locals: { getSession } }) => {
   const session = await getSession()
 
-  /* User is already logged in. */
   if (session) redirect(303, '/convert')
 }
 

@@ -1,7 +1,7 @@
 import { redirect } from '@sveltejs/kit'
 
-export const load = async ({ locals: { supabase } }) => {
-  const result = await supabase.auth.getUser()
+export const load = async ({ locals: { getSession } }) => {
+  const session = await getSession()
 
-  if (!result.data.user) redirect(307, '/auth')
+  if (!session) redirect(307, '/auth')
 }

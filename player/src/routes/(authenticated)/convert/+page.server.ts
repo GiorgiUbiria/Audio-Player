@@ -4,10 +4,10 @@ import { superValidate } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
 import { formSchema } from './schema';
 
-export const load = async ({ locals: { supabase } }) => {
-	const result = await supabase.auth.getUser();
+export const load = async ({ locals: { getSession } }) => {
+	const session = await getSession();
 
-	if (!result.data.user) redirect(307, '/auth');
+	if (!session) redirect(307, '/auth');
 	return {
 		form: await superValidate(zod(formSchema))
 	};
