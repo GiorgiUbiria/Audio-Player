@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 
 import { createClient } from "@/utils/supabase/server";
+import { redirect } from "next/navigation";
 
 export async function getSongs() {
   const supabase = createClient();
@@ -41,4 +42,7 @@ export async function convertYtVideo(formData: FormData) {
     method: "POST",
     body: JSON.stringify(data),
   });
+
+  revalidatePath("/player", "layout")
+  redirect("/player")
 }
