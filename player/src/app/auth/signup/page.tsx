@@ -12,8 +12,16 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 import { oauth, signup } from "../actions";
+import { createClient } from "@/utils/supabase/server";
+import { redirect } from "next/navigation";
 
-export default function LoginForm() {
+export default async function Page() {
+  const supabase = createClient();
+
+  const { data, error } = await supabase.auth.getUser();
+  if (error || !data?.user) {
+    redirect("/");
+  }
   return (
     <Card className="mx-auto max-w-sm">
       <CardHeader>
