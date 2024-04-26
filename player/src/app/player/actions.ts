@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 
 import { createClient } from "@/utils/supabase/server";
 
-export default async function getSongs() {
+export async function getSongs() {
   const supabase = createClient();
   const arr: string[] = [];
   const { data: list, error } = await supabase.storage
@@ -26,7 +26,19 @@ export default async function getSongs() {
     arr.push(data.publicUrl);
   });
 
-  revalidatePath("/player", "layout")
+  revalidatePath("/player", "layout");
 
   return arr;
+}
+
+export async function convertYtVideo(formData: FormData) {
+  const data = {
+    url: formData.get("video_url") as string,
+    name: formData.get("file_name") as string,
+  };
+
+  await fetch("http://localhost:8080/", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
 }
