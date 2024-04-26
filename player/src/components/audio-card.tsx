@@ -7,7 +7,7 @@ interface Props {
   playSong: (index: number) => void;
 }
 
-const MusicCard: React.FC<Props> = ({
+const AudioCard: React.FC<Props> = ({
   song,
   index,
   currentSongIndex,
@@ -25,4 +25,4 @@ const MusicCard: React.FC<Props> = ({
   );
 };
 
-export default MusicCard;
+export default AudioCard;
