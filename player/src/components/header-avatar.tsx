@@ -10,8 +10,13 @@ import { Button } from "./ui/button";
 
 import { logout } from "@/app/auth/actions";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { createClient } from "@/utils/supabase/client";
 
-const HeaderAvatar = () => {
+const HeaderAvatar = async () => {
+  const supabase = createClient();
+
+  const { data } = await supabase.auth.getUser();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -31,12 +36,16 @@ const HeaderAvatar = () => {
         <DropdownMenuSeparator />
         <DropdownMenuItem>Settings</DropdownMenuItem>
         <DropdownMenuItem>Support</DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <form>
-            <button formAction={logout}>Logout</button>
-          </form>
-        </DropdownMenuItem>
+        {data.user && (
+          <>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <form>
+                <button formAction={logout}>Logout</button>
+              </form>
+            </DropdownMenuItem>
+          </>
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );

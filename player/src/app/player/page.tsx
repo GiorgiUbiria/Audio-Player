@@ -8,5 +8,5 @@ export default async function Page() {
     <div className="w-full flex justify-center">
       <AudioPlayer songs={songs} />
     </div>
-  )
+  );
 }
