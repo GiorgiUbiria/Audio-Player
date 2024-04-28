@@ -7,6 +7,7 @@ export default async function Page() {
 
   const { data } = await supabase.auth.getUser();
   if (data.user) {
+    console.log(data.user)
     redirect("/");
   }
 
