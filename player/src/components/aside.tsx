@@ -21,58 +21,46 @@ function Aside() {
         <TooltipProvider>
           <Link
             className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
-            href="#"
+            href="/"
           >
             <NameIcon />
-            <span className="sr-only">Acme Inc</span>
+            <span className="sr-only">AudioHub</span>
           </Link>
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
                 className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-                href="#"
+                href="/player"
               >
                 <DashboardIcon />
-                <span className="sr-only">Dashboard</span>
+                <span className="sr-only">Player</span>
               </Link>
             </TooltipTrigger>
-            <TooltipContent side="right">Dashboard</TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Link
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-                href="#"
-              >
-                <OrdersIcon />
-                <span className="sr-only">Orders</span>
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent side="right">Orders</TooltipContent>
+            <TooltipContent side="right">Player</TooltipContent>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
                 className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-                href="#"
+                href="/player/convert"
               >
                 <ProductsIcon />
-                <span className="sr-only">Products</span>
+                <span className="sr-only">Convert</span>
               </Link>
             </TooltipTrigger>
-            <TooltipContent side="right">Products</TooltipContent>
+            <TooltipContent side="right">Convert</TooltipContent>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
                 className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-                href="#"
+                href="/friends"
               >
                 <CustomersIcon />
-                <span className="sr-only">Customers</span>
+                <span className="sr-only">Friends</span>
               </Link>
             </TooltipTrigger>
-            <TooltipContent side="right">Customers</TooltipContent>
+            <TooltipContent side="right">Friends</TooltipContent>
           </Tooltip>
         </TooltipProvider>
       </nav>

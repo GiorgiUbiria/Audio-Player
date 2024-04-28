@@ -8,8 +8,6 @@ const HeaderAvatar = async () => {
 
   const user = data.user
 
-  console.log(user)
-
   return <AvatarDropdown user={user} />;
 };
 

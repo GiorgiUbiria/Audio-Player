@@ -16,7 +16,6 @@ import Link from "next/link";
 import { User } from "@supabase/supabase-js";
 
 const AvatarDropdown = (data: {user: User} | {user: null}) => {
-  console.log(data.user)
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
