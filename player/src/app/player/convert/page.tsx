@@ -1,3 +1,5 @@
+"use client";
+
 import { convertYtVideo } from "../actions";
 
 export default function Page() {
