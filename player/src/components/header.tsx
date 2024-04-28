@@ -27,38 +27,31 @@ export default async function Header() {
             <nav className="grid gap-6 text-lg font-medium">
               <Link
                 className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
-                href="#"
+                href="/"
               >
                 <NameIcon />
-                <span className="sr-only">Acme Inc</span>
+                <span className="sr-only">AudioHub</span>
               </Link>
               <Link
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                href="#"
+                href="/player"
               >
                 <DashboardIcon />
-                Dashboard
+                Player 
               </Link>
               <Link
                 className="flex items-center gap-4 px-2.5 text-foreground"
-                href="#"
-              >
-                <OrdersIcon />
-                Orders
-              </Link>
-              <Link
-                className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                href="#"
+                href="/player/convert"
               >
                 <ProductsIcon />
-                Products
+                Convert 
               </Link>
               <Link
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                href="#"
+                href="/friends"
               >
                 <CustomersIcon />
-                Customers
+                Friends 
               </Link>
               <Link
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"

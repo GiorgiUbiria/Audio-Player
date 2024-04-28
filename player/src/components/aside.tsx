@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/tooltip";
 import NameIcon from "./name-icon";
 import DashboardIcon from "./dashboard-icon";
-import OrdersIcon from "./orders-icon";
 import ProductsIcon from "./products-icon";
 import CustomersIcon from "./customers-icon";
 import { SettingsIcon } from "lucide-react";
