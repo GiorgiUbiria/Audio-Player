@@ -10,22 +10,22 @@ import (
 )
 
 func goDotEnvVariable(key string) string {
-  err := godotenv.Load(".env")
+	err := godotenv.Load(".env")
 
-  if err != nil {
-    log.Fatalf("Error loading .env file")
-  }
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+	}
 
-  return os.Getenv(key)
+	return os.Getenv(key)
 }
 
 func createClient() *supabase.Client {
-  url := goDotEnvVariable("SUPABASE_URL")
-  key := goDotEnvVariable("SUPABASE_ANON_KEY")
-  client, err := supabase.NewClient(url, key, nil)
-  if err != nil {
-    fmt.Println("cannot initalize client", err)
-  }
+	url := goDotEnvVariable("SUPABASE_URL")
+	key := goDotEnvVariable("SUPABASE_ANON_KEY")
+	client, err := supabase.NewClient(url, key, nil)
+	if err != nil {
+		fmt.Println("cannot initalize client", err)
+	}
 
-  return client
+	return client
 }

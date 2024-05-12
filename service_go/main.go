@@ -53,4 +53,3 @@ func handleConvert(w http.ResponseWriter, r *http.Request) {
 
 	http.ServeFile(w, r, outputFile)
 }
-
